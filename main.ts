@@ -3,14 +3,15 @@
 // Deterministic: the same line on every run. No dependencies, no network.
 import { mkdirSync, writeFileSync } from "node:fs";
 
-// Round 3 (final): v2's "your judgment" was abstract and the wallet
-// showed no reason it knows better; the twist could apply at any hour.
-// Fix: give the wallet a memory of past 3 AM mistakes and make the
-// target the owner's "3 AM self" — the hour itself becomes the joke,
-// and the wallet is the daytime owner's guardian against his own
-// late-night self. No battery / firmware / cold-storage cliché.
+// Round 4 (revision): the "restraining order" punch was a legal/
+// bureaucratic image, not something a signing device itself does.
+// Fix: make the refusal device-native — the wallet swallows its own
+// keys and goes dark (its screen), refusing with its own tools and
+// habits. Keeps the memory of past 3 AM mistakes, the guardian angle
+// (daytime owner vs. 3 AM self), and the hour load-bearing ("till
+// sunrise"). No battery / firmware / cold-storage cliché.
 const LINE =
-  "I've signed enough of your 3 AM ideas to know how this ends — so tonight I'm filing a restraining order against your 3 AM self.";
+  "I've signed enough of your 3 AM ideas to know how this ends — tonight I'm swallowing my keys and going dark till sunrise.";
 
 mkdirSync("/output", { recursive: true });
 writeFileSync("/output/entry.txt", LINE, "utf8");
